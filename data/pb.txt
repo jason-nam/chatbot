@@ -1,0 +1,34 @@
+L451317 +++$+++ u7151 +++$+++ m480 +++$+++ MOTHER +++$+++ You are sick, that's why he's here.
+L451316 +++$+++ u7153 +++$+++ m480 +++$+++ THE KID +++$+++ Mom, can't you tell him that I'm sick?
+L451315 +++$+++ u7151 +++$+++ m480 +++$+++ MOTHER +++$+++ Your grandfather's here.
+L451314 +++$+++ u7153 +++$+++ m480 +++$+++ THE KID +++$+++ What?
+L451313 +++$+++ u7151 +++$+++ m480 +++$+++ MOTHER +++$+++ Guess what.
+L451312 +++$+++ u7153 +++$+++ m480 +++$+++ THE KID +++$+++ A little bit.
+L451311 +++$+++ u7151 +++$+++ m480 +++$+++ MOTHER +++$+++ You feeling any better?
+L451417 +++$+++ u7153 +++$+++ m480 +++$+++ THE KID +++$+++ What?
+L451345 +++$+++ u7153 +++$+++ m480 +++$+++ THE KID +++$+++ -hold it, hold it-
+L451326 +++$+++ u7146 +++$+++ m480 +++$+++ GRANDFATHER +++$+++ That's right.
+L451325 +++$+++ u7153 +++$+++ m480 +++$+++ THE KID +++$+++ A book?
+L451324 +++$+++ u7146 +++$+++ m480 +++$+++ GRANDFATHER +++$+++ Open it up.
+L451323 +++$+++ u7153 +++$+++ m480 +++$+++ THE KID +++$+++ What is it?
+L451322 +++$+++ u7146 +++$+++ m480 +++$+++ GRANDFATHER +++$+++ I brought you a special present.
+L451464 +++$+++ u7148 +++$+++ m480 +++$+++ INIGO +++$+++ I do not suppose you could speed things up?
+L451463 +++$+++ u7149 +++$+++ m480 +++$+++ MAN IN BLACK +++$+++ Thank you.
+L451462 +++$+++ u7148 +++$+++ m480 +++$+++ INIGO +++$+++ Sorry.
+L452098 +++$+++ u7146 +++$+++ m480 +++$+++ GRANDFATHER +++$+++ As you wish...
+L452097 +++$+++ u7153 +++$+++ m480 +++$+++ THE KID +++$+++ Maybe you could come over and read it again to me tomorrow.
+L452095 +++$+++ u7146 +++$+++ m480 +++$+++ GRANDFATHER +++$+++ Okay. Okay. Okay. All right. So long.
+L452094 +++$+++ u7153 +++$+++ m480 +++$+++ THE KID +++$+++ Okay.
+L452093 +++$+++ u7146 +++$+++ m480 +++$+++ GRANDFATHER +++$+++ Now I think you ought to go to sleep.
+L452088 +++$+++ u7153 +++$+++ m480 +++$+++ THE KID +++$+++ What? What?
+L451438 +++$+++ u7155 +++$+++ m480 +++$+++ VIZZINI +++$+++ Inconceivable!
+L451437 +++$+++ u7148 +++$+++ m480 +++$+++ INIGO +++$+++ He's climbing the rope. And he's gaining on us.
+L451793 +++$+++ u7145 +++$+++ m480 +++$+++ FEZZIK +++$+++ Yeah?
+L451792 +++$+++ u7148 +++$+++ m480 +++$+++ INIGO +++$+++ Perhaps not. I feel fine.
+L451791 +++$+++ u7145 +++$+++ m480 +++$+++ FEZZIK +++$+++ You don't look so good.  You don't smell so good either.
+L451790 +++$+++ u7145 +++$+++ m480 +++$+++ FEZZIK +++$+++ True!
+L451789 +++$+++ u7148 +++$+++ m480 +++$+++ INIGO +++$+++ It's you.
+L451788 +++$+++ u7145 +++$+++ m480 +++$+++ FEZZIK +++$+++ Hello.
+L451915 +++$+++ u7150 +++$+++ m480 +++$+++ MIRACLE MAX +++$+++ A good hour. Yeah.
+L451914 +++$+++ u7154 +++$+++ m480 +++$+++ VALERIE +++$+++ Yeah, an hour.
+L451913 +++$+++ u7150 +++$+++ m480 +++$+++ MIRACLE MAX +++$+++ An hour.
