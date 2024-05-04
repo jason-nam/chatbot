@@ -3,8 +3,10 @@ Implementation of Positional Encoding
 """
 
 import tensorflow as tf
+import numpy as np
+import matplotlib.pyplot as plt
 
-class PositionalEncoding(tf.keras.layers.layer):
+class PositionalEncoding(tf.keras.layers.Layer):
 
     def __init__(self, position, d_model):
         super(PositionalEncoding, self).__init__()
@@ -30,6 +32,4 @@ class PositionalEncoding(tf.keras.layers.layer):
         return tf.cast(pos_encoding, tf.float32)
     
     def call(self, inputs):
-        outputs = inputs + self.pos_encoding[:, :tf.shape(inputs)[1], :]
-        
-        return outputs
+        return inputs + self.pos_encoding[:, :tf.shape(inputs)[1], :]

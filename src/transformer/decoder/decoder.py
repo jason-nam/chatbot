@@ -4,7 +4,7 @@ Decoder
 
 import tensorflow as tf
 
-from src.transformer.encoder import positional_encoding
+from transformer import positional_encoding
 from src.transformer.decoder import decoder_layer
 
 def decoder(vocab_size, num_layers, units, d_model, num_heads, dropout, name='decoder'):
