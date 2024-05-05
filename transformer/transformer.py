@@ -2,10 +2,10 @@
 Transformer Model
 """
 
-import tensorflow as tf
+import tensorflow as tf # type: ignore
 
-from src.transformer.encoder import encoder
-from src.transformer.decoder import decoder
+from transformer.encoder import encoder
+from transformer.decoder import decoder
 
 def create_padding_mask(x):
   mask = tf.cast(tf.math.equal(x, 0), tf.float32)

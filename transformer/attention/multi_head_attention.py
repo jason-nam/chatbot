@@ -4,7 +4,7 @@ Implementation of Multi Head Attention Layers
 
 import tensorflow as tf
 
-from src.transformer.attention import scaled_dot_prod_attention
+from transformer.attention import scaled_dot_prod_attention
 
 class MultiHeadAttention(tf.keras.layers.layer):
 

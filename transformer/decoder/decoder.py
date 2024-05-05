@@ -5,7 +5,7 @@ Decoder
 import tensorflow as tf
 
 from transformer import positional_encoding
-from src.transformer.decoder import decoder_layer
+from transformer.decoder import decoder_layer
 
 def decoder(vocab_size, num_layers, units, d_model, num_heads, dropout, name='decoder'):
     inputs = tf.keras.Input(shape=(None, ), name='inputs')
