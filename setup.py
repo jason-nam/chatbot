@@ -11,6 +11,7 @@ setup(
         "numpy",
         "matplotlib",
         "pyyaml",
+        "unittest",
     ],
     extras_require={
         "tensorflow": ["tensorflow"],

@@ -4,9 +4,9 @@ Implementation of Multi Head Attention Layers
 
 import tensorflow as tf
 
-from transformer.attention import scaled_dot_prod_attention
+from transformer.attention.scaled_dot_product_attention import scaled_dot_product_attention
 
-class MultiHeadAttention(tf.keras.layers.layer):
+class MultiHeadAttention(tf.keras.layers.Layer):
 
     def __init__(self, d_model, num_heads, name="multi_head_attention"):
         super(MultiHeadAttention, self).__init__(name=name)
@@ -39,7 +39,7 @@ class MultiHeadAttention(tf.keras.layers.layer):
         value = self.split_heads(value, batch_size)
 
         # scaled dot product attention
-        scaled_attention = scaled_dot_prod_attention.scaled_dot_product_attention(query, key, value, mask)
+        scaled_attention, _ = scaled_dot_product_attention(query, key, value, mask)
         scaled_attention = tf.transpose(scaled_attention, perm=[0, 2, 1, 3])
 
         # concatenation of heads
