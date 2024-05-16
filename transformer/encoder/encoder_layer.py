@@ -4,13 +4,13 @@ Encoder Layer
 
 import tensorflow as tf
 
-from transformer.attention import multi_head_attention
+from transformer.attention.multi_head_attention import MultiHeadAttention
 
 def encoder_layer(units, d_model, num_heads, dropout, name='encoder_layer'):
     inputs = tf.keras.Input(shape=(None, d_model), name='inputs')
     padding_mask = tf.keras.Input(shape=(1, 1, None), name='padding_mask')
 
-    attention = multi_head_attention.MultiHeadAttention(
+    attention = MultiHeadAttention(
         d_model=d_model, num_heads=num_heads, name='attention')({
             'query': inputs,
             'key': inputs,
