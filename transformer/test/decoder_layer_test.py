@@ -60,11 +60,14 @@ class TestDecoderLayer(unittest.TestCase):
         self.assertTrue(normalization_found)
 
     def test_masking_effect(self):
+        no_look_ahead_mask = tf.zeros((self.batch_size, 1, self.seq_len, self.seq_len))
+        no_padding_mask = tf.zeros((self.batch_size, 1, 1, self.seq_len))
         inputs_with_mask = [self.inputs, self.encoder_outputs, self.look_ahead_mask, self.padding_mask]
-        inputs_without_mask = [self.inputs, self.encoder_outputs, None, None]
+        inputs_without_mask = [self.inputs, self.encoder_outputs, no_look_ahead_mask, no_padding_mask]
         output_with_mask = self.decoder_layer_model(inputs_with_mask)
         output_without_mask = self.decoder_layer_model(inputs_without_mask)
         self.assertFalse(tf.reduce_all(tf.equal(output_with_mask, output_without_mask)).numpy())
+
 
 if __name__ == '__main__':
     unittest.main()
