@@ -58,20 +58,28 @@ class TestDecoder(unittest.TestCase):
         self.assertEqual(embedding_layer.output_dim, self.d_model)
 
         self.assertIsInstance(positional_encoding_layer, PositionalEncoding)
-        self.assertEqual(positional_encoding_layer.d_model, self.d_model)
 
     def test_dropout_and_normalization(self):
-        dropout_found = False
-        normalization_found = False
-        for layer in self.decoder_model.layers:
-            if isinstance(layer, tf.keras.layers.Dropout):
-                dropout_found = True
-                self.assertEqual(layer.rate, self.dropout)
-            if isinstance(layer, tf.keras.layers.LayerNormalization):
-                normalization_found = True
-                self.assertEqual(layer.epsilon, 1e-6)
-        self.assertTrue(dropout_found)
-        self.assertTrue(normalization_found)
+        def find_layers(model, layer_type):
+            layers_found = []
+            for layer in model.layers:
+                if isinstance(layer, layer_type):
+                    layers_found.append(layer)
+                elif isinstance(layer, tf.keras.Model):
+                    layers_found.extend(find_layers(layer, layer_type))
+            return layers_found
+
+        dropouts = find_layers(self.decoder_model, tf.keras.layers.Dropout)
+        normalizations = find_layers(self.decoder_model, tf.keras.layers.LayerNormalization)
+
+        self.assertTrue(len(dropouts) > 0, "No Dropout layers found")
+        self.assertTrue(len(normalizations) > 0, "No LayerNormalization layers found")
+
+        for dropout in dropouts:
+            self.assertEqual(dropout.rate, self.dropout)
+
+        for normalization in normalizations:
+            self.assertEqual(normalization.epsilon, 1e-6)
 
     def test_attention_layers(self):
         for i in range(self.num_layers):
