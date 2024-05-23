@@ -4,8 +4,8 @@ Transformer Model
 
 import tensorflow as tf # type: ignore
 
-from transformer.encoder import encoder
-from transformer.decoder import decoder
+from transformer.encoder.encoder import encoder
+from transformer.decoder.decoder import decoder
 
 def create_padding_mask(x):
   mask = tf.cast(tf.math.equal(x, 0), tf.float32)
@@ -22,8 +22,8 @@ def create_look_ahead_mask(x):
 
 def transformer(vocab_size, num_layers, units, d_model, num_heads, dropout, name="transformer"):
     # encoder inputs
-    inputs = tf.keras.Input(shape=(None, ), name='inputs')
-    decoder_inputs = tf.keras.Input(shape=(None, ), name='decoder_inputs')
+    inputs = tf.keras.Input(shape=(None,), name='inputs')
+    decoder_inputs = tf.keras.Input(shape=(None,), name='decoder_inputs')
 
     # encoder padding mask
     encoder_padding_mask = tf.keras.layers.Lambda(
@@ -35,9 +35,9 @@ def transformer(vocab_size, num_layers, units, d_model, num_heads, dropout, name
     
     # 2nd attention block
     decoder_padding_mask = tf.keras.layers.Lambda(
-       create_padding_mask, output_shape=(1, 1, None), name='decoder_padding_mask')
+       create_padding_mask, output_shape=(1, 1, None), name='decoder_padding_mask')(inputs)
     
-    encoder_outputs = encoder.encoder(
+    encoder_outputs = encoder(
         vocab_size=vocab_size,
         num_layers=num_layers,
         units=units,
@@ -46,7 +46,7 @@ def transformer(vocab_size, num_layers, units, d_model, num_heads, dropout, name
         dropout=dropout,
     )(inputs=[inputs, encoder_padding_mask])
 
-    decoder_outputs = decoder.decoder(
+    decoder_outputs = decoder(
         vocab_size=vocab_size,
         num_layers=num_layers,
         units=units,
