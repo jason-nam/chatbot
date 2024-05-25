@@ -2,7 +2,7 @@
 Transformer Model
 """
 
-import tensorflow as tf # type: ignore
+import tensorflow as tf
 
 from transformer.encoder.encoder import encoder
 from transformer.decoder.decoder import decoder
@@ -58,3 +58,15 @@ def transformer(vocab_size, num_layers, units, d_model, num_heads, dropout, name
     outputs = tf.keras.layers.Dense(units=vocab_size, name="outputs")(decoder_outputs)
 
     return tf.keras.Model(inputs=[inputs, decoder_inputs], outputs=outputs, name=name)
+
+if __name__ == '__main__':
+    small_transformer = transformer(
+        vocab_size = 9000,
+        num_layers = 4,
+        units = 512,
+        d_model = 128,
+        num_heads = 4,
+        dropout = 0.3,
+        name="small_transformer")
+
+    tf.keras.utils.plot_model(small_transformer, to_file='small_transformer.png', show_shapes=True)
