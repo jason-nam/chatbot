@@ -9,7 +9,6 @@ from transformer.decoder.decoder import decoder
 
 def create_padding_mask(x):
     mask = tf.cast(tf.math.equal(x, 0), tf.float32)
-    # (batch_size, 1, 1, length of key)
     
     return mask[:, tf.newaxis, tf.newaxis, :]
 
