@@ -12,9 +12,9 @@ setup(
         "matplotlib",
         "pyyaml",
         "unittest",
+        "tensorflow",
     ],
     extras_require={
-        "tensorflow": ["tensorflow"],
         "convokit": ["convokit"],
         "tensorflow with gpu": ["tensorflow-gpu"],
     },
