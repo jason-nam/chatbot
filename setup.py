@@ -13,6 +13,7 @@ setup(
         "pyyaml",
         "unittest",
         "tensorflow",
+        "tensorflow_datasets",
     ],
     extras_require={
         "convokit": ["convokit"],
